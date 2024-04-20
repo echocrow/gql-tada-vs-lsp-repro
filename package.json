@@ -1,0 +1,19 @@
+{
+  "name": "gql-tada-vs-lsp",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "gen": "pnpm run gen:schema && pnpm run gen:gql-tada",
+    "gen:schema": "curl -o ./src/generated/schema.graphql https://docs.github.com/public/fpt/schema.docs.graphql",
+    "gen:gql-tada": "gql.tada generate output"
+  },
+  "devDependencies": {
+    "@0no-co/graphqlsp": "^1.10.1",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "gql.tada": "^1.5.2",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0"
+  }
+}
