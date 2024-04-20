@@ -6,7 +6,7 @@ CLI:
 # Install dependencies.
 pnpm install
 
-# Download schema & generate gql.tada types.
+# Generate gql.tada types.
 pnpm gen
 ```
 

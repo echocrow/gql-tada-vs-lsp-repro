@@ -1,0 +1,62 @@
+# This is a stub of the official GitHub GraphQL schema.
+# See: https://docs.github.com/en/graphql/overview/public-schema
+
+"""
+The query root of GitHub's GraphQL interface.
+"""
+type Query {
+  """
+  Lookup a given repository by the owner and repository name.
+  """
+  repository(
+    """
+    The name of the repository
+    """
+    name: String!
+
+    """
+    The login field of a user or organization
+    """
+    owner: String!
+  ): Repository
+}
+
+"""
+A repository contains the content for a project.
+"""
+type Repository {
+  """
+  The description of the repository.
+  """
+  description: String
+
+  """
+  The Node ID of the Repository object
+  """
+  id: ID!
+
+  """
+  The name of the repository.
+  """
+  name: String!
+
+  """
+  Identifies the date and time when the object was last updated.
+  """
+  updatedAt: DateTime!
+
+  """
+  The HTTP URL for this repository
+  """
+  url: URI!
+}
+
+"""
+An ISO-8601 encoded UTC date string.
+"""
+scalar DateTime
+
+"""
+An RFC 3986, RFC 3987, and RFC 6570 (level 4) compliant URI string.
+"""
+scalar URI
